@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  apicurio-registry:
+    image: apicurio/apicurio-registry-mem:latest-release
+    ports:
+      - "8080:8080"
+  

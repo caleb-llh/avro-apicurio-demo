@@ -1,0 +1,8 @@
+version: '3'
+services:
+
+  consumer-v2:
+    build:
+      context: ./consumer-v2
+      dockerfile: Dockerfile
+    command: ["python", "consumer-v2.py"]

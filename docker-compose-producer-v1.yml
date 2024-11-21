@@ -1,0 +1,9 @@
+version: '3'
+services:
+
+  producer-v1:
+    build:
+      context: ./producer-v1
+      dockerfile: Dockerfile
+    command: ["python", "producer-v1.py"]
+  
