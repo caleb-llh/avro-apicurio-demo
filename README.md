@@ -18,12 +18,14 @@ Dependencies you need to run demo:
 - `make`
 
 # Demo steps
-### Setup dependency services
+### Step 1: Setup dependency services
 - Run  `make init` top spin up rabbitmq and apicurio
 - Makefile includes step to add v1 schema to schema registry (development time registration)
 - (OPTIONAL) Manually configure validity and compatibility checks on [apicurio schema registry](http://localhost:8080/ui/artifacts)
 
-### Run my consumer v1
+
+
+### Step 2: Run my consumer v1
 Run `make consumer1` 
 - Consumer v1 gets the v1 schema from apicurio:
     ```
@@ -38,13 +40,16 @@ Run `make consumer1`
     ```
 - Consumer subscribes to RabbitMQ
 
-### Run my producer v1
+
+
+### Step 3: Run my producer v1
 Run `make producer1` 
 - Publisher v1 serialises message with v1 schema, publishes to RabbitMQ
 - Consumer v1 consumes and deserialises message with v1 schema
 
 
-### Upgrade the schema and run new producer and consumer (runtime registration)
+
+### Step 4: Upgrade the schema and run new producer and consumer (runtime registration)
 Run `make producer2` 
 - Publisher v2 uploads new schema v2 to apicurio during runtime
     ```
@@ -62,14 +67,15 @@ Run `make producer2`
 - Consumer v1 consumes and *STILL MANAGES* to deserialise message with v1 schema due to **forward compatibility**.
 
 
-### Observe that consumer can react to new schema
+### Step 5: Observe that consumer can react to new schema
 Run `make consumer2` 
 - Consumer v2 consumes and deserialises message with v2 schema
 
-### Clean up
+
+### Step 6: Clean up
 Clean up by running `make rm` in each directory
 
----
-# GUI
+
+### Extra information
 - RabbitMQ GUI: http://localhost:15672
 - Apicurio GUI: http://localhost:8080/ui/artifacts
