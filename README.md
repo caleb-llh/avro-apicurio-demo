@@ -1,5 +1,4 @@
 
-![System Architecture](./apicurio-rabbitmq.png)
 
 # Introduction 
 This project demonstrates:
@@ -8,6 +7,9 @@ This project demonstrates:
 - **schema validation** during serialisation/deserialisation
 - **forward compatibility** with Avro
 - how a **message broker/queue** (RabbitMQ) can work together with a **schema registry** (Apicurio)
+
+
+![System Architecture](./schema-flow.png)
 
 
 Dependencies you need to run demo:
